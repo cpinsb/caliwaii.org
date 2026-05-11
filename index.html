@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caliwaii — Real Estate & Real Estate Development</title>
+  <meta name="description" content="Real estate and development across California and Hawaii — Santa Barbara, Isla Vista, Mammoth Lakes, San Luis Obispo, and Honolulu." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:   #1C3A52;
+      --gold:   #B8892A;
+      --ink:    #1A1A1A;
+      --muted:  #6B7280;
+      --bg:     #F8F6F2;
+      --white:  #FFFFFF;
+      --border: #E5E1D8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold) 0%, #D4AF60 50%, var(--gold) 100%);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .hero h1 span {
+      color: var(--gold);
+    }
+    .hero .tagline {
+      margin-top: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ── LOCATION BUTTONS ── */
+    .locations {
+      max-width: 780px;
+      margin: 56px auto 72px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .loc-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 32px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .loc-btn:hover {
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(28,58,82,0.10);
+      transform: translateY(-2px);
+    }
+    .loc-btn .loc-name {
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+    .loc-btn .loc-state {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 10px;
+    }
+    .loc-btn .arrow {
+      color: var(--gold);
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .loc-btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 56px 20px 48px; }
+      .loc-btn { padding: 18px 22px; font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Cali<span>waii</span></h1>
+    <p class="tagline">Real Estate &amp; Real Estate Development</p>
+  </div>
+
+  <nav class="locations">
+    <a class="loc-btn" href="santa-barbara.html">
+      <span><span class="loc-name">Santa Barbara</span><span class="loc-state">CA</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="loc-btn" href="isla-vista.html">
+      <span><span class="loc-name">Isla Vista</span><span class="loc-state">CA</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="loc-btn" href="mammoth-lakes.html">
+      <span><span class="loc-name">Mammoth Lakes</span><span class="loc-state">CA</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="loc-btn" href="san-luis-obispo.html">
+      <span><span class="loc-name">San Luis Obispo</span><span class="loc-state">CA</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="loc-btn" href="honolulu.html">
+      <span><span class="loc-name">Honolulu</span><span class="loc-state">HI</span></span>
+      <span class="arrow">→</span>
+    </a>
+  </nav>
+
+  <footer>© <span id="yr"></span> Caliwaii</footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

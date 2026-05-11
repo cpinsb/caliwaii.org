@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>San Luis Obispo — Caliwaii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1C3A52; --gold: #B8892A; --ink: #1A1A1A;
+      --muted: #6B7280; --bg: #F8F6F2; --white: #FFFFFF; --border: #E5E1D8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); }
+    .topbar {
+      background: var(--navy); padding: 16px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 3px solid var(--gold);
+    }
+    .topbar .brand {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--white); letter-spacing: 0.06em; text-decoration: none;
+    }
+    .topbar .brand span { color: var(--gold); }
+    .topbar a.back { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .topbar a.back:hover { color: var(--gold); }
+    .page-header { padding: 44px 28px 32px; max-width: 900px; margin: 0 auto; }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; color: var(--navy); letter-spacing: -0.01em;
+    }
+    .page-header p { color: var(--muted); margin-top: 6px; font-size: 0.95rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 0 28px 64px; }
+    .card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .card-photo {
+      width: 100%; height: 240px; object-fit: cover; display: block;
+      background: var(--border);
+    }
+    .card-body { padding: 22px 26px 26px; }
+    .card-body h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: 6px; font-weight: 600; }
+    .card-location { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .card-desc { font-size: 0.95rem; color: #333; line-height: 1.6; margin-bottom: 16px; }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--gold); font-weight: 600; font-size: 0.9rem; text-decoration: none;
+    }
+    .map-link:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="brand" href="index.html">Cali<span>waii</span></a>
+    <a class="back" href="index.html">← All Locations</a>
+  </div>
+  <div class="page-header">
+    <h1>San Luis Obispo, CA</h1>
+    <p>Properties in San Luis Obispo, California</p>
+  </div>
+  <main>
+    <div class="card">
+      <img class="card-photo" src="photos/casa-web.jpg" alt="Casa St Apartments">
+      <div class="card-body">
+        <h2>Casa St Apartments</h2>
+        <div class="card-location">San Luis Obispo, CA</div>
+        <p class="card-desc">Multi-unit apartment building in San Luis Obispo, serving Cal Poly students and locals.</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=60+Casa+St,+San+Luis+Obispo,+CA" target="_blank" rel="noopener">View on Google Maps →</a>
+      </div>
+    </div>
+  </main>
+  <footer>© <span id="yr"></span> Caliwaii</footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
